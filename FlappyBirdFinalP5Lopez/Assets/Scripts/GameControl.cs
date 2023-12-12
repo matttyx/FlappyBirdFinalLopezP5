@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameControl : MonoBehaviour
 {
@@ -9,6 +10,9 @@ public class GameControl : MonoBehaviour
     public GameObject gameOverText;
     public bool gameOver = false;
     public float scrollSpeed = -1.0f;
+    public Text scoretext;
+
+    private int score = 0;
 
     // Start is called before the first frame update
     void Awake()
@@ -37,5 +41,15 @@ public class GameControl : MonoBehaviour
     {
         gameOverText.SetActive(true);
         gameOver = true;
+    }
+
+    public void BirdScored() 
+    { 
+       if (gameOver)
+        {
+            return;
+        }
+        score++;
+        scoretext.text = "Score: " + score.ToString();
     }
 }
