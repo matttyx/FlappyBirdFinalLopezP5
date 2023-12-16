@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
 
 public class GameControl : MonoBehaviour
 {
@@ -10,7 +11,7 @@ public class GameControl : MonoBehaviour
     public GameObject gameOverText;
     public bool gameOver = false;
     public float scrollSpeed = -1.0f;
-    public Text scoretext;
+    public Text scoreText;
 
     private int score = 0;
 
@@ -50,6 +51,6 @@ public class GameControl : MonoBehaviour
             return;
         }
         score++;
-        scoretext.text = "Score: " + score.ToString();
+        scoreText.text = "Score: " + score.ToString();
     }
 }
